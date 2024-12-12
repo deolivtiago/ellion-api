@@ -2,13 +2,13 @@ import Config
 
 # Configure your database
 config :ellion, EllionCore.Repo,
-  username: "postgres",
-  password: "postgres",
-  hostname: "localhost",
+  username: System.get_env("DB_USER", "postgres"),
+  password: System.get_env("DB_PASSWORD", "postgres"),
+  hostname: System.get_env("DB_HOST", "localhost"),
   database: "ellion_dev",
   stacktrace: true,
   show_sensitive_data_on_connection_error: true,
-  pool_size: 10
+  pool_size: System.schedulers_online() * 2
 
 # For development, we disable any cache and enable
 # debugging and code reloading.
