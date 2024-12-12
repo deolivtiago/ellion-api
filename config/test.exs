@@ -15,7 +15,7 @@ config :ellion, EllionCore.Repo,
 
 # We don't run a server during test. If one is required,
 # you can enable the server option below.
-config :ellion, EllionCoreWeb.Endpoint,
+config :ellion, EllionWeb.Endpoint,
   http: [ip: {127, 0, 0, 1}, port: 4002],
   secret_key_base: "UeeVJ5S2z08XH3vuzd43nhzEedA6gXIPAjc/qHakDySlu9nCaDyIn8xfRHz+Iltp",
   server: false

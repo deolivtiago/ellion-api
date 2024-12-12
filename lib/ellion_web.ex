@@ -1,12 +1,12 @@
-defmodule EllionCoreWeb do
+defmodule EllionWeb do
   @moduledoc """
   The entrypoint for defining your web interface, such
   as controllers, components, channels, and so on.
 
   This can be used in your application as:
 
-      use EllionCoreWeb, :controller
-      use EllionCoreWeb, :html
+      use EllionWeb, :controller
+      use EllionWeb, :html
 
   The definitions below will be executed for every controller,
   component, etc, so keep them short and clean, focused
@@ -39,10 +39,10 @@ defmodule EllionCoreWeb do
     quote do
       use Phoenix.Controller,
         formats: [:html, :json],
-        layouts: [html: EllionCoreWeb.Layouts]
+        layouts: [html: EllionWeb.Layouts]
 
       import Plug.Conn
-      import EllionCoreWeb.Gettext
+      import EllionWeb.Gettext
 
       unquote(verified_routes())
     end
@@ -51,9 +51,9 @@ defmodule EllionCoreWeb do
   def verified_routes do
     quote do
       use Phoenix.VerifiedRoutes,
-        endpoint: EllionCoreWeb.Endpoint,
-        router: EllionCoreWeb.Router,
-        statics: EllionCoreWeb.static_paths()
+        endpoint: EllionWeb.Endpoint,
+        router: EllionWeb.Router,
+        statics: EllionWeb.static_paths()
     end
   end
 

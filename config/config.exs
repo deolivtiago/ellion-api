@@ -13,11 +13,11 @@ config :ellion,
   generators: [timestamp_type: :utc_datetime, binary_id: true]
 
 # Configures the endpoint
-config :ellion, EllionCoreWeb.Endpoint,
+config :ellion, EllionWeb.Endpoint,
   url: [host: "localhost"],
   adapter: Bandit.PhoenixAdapter,
   render_errors: [
-    formats: [json: EllionCoreWeb.ErrorJSON],
+    formats: [json: EllionWeb.ErrorJSON],
     layout: false
   ],
   pubsub_server: EllionCore.PubSub,

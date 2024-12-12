@@ -1,11 +1,11 @@
-defmodule EllionCoreWeb.Router do
-  use EllionCoreWeb, :router
+defmodule EllionWeb.Router do
+  use EllionWeb, :router
 
   pipeline :api do
     plug :accepts, ["json"]
   end
 
-  scope "/api", EllionCoreWeb do
+  scope "/api", EllionWeb do
     pipe_through :api
   end
 

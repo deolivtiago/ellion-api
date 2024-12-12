@@ -8,7 +8,7 @@ defmodule EllionCore.Application do
   @impl true
   def start(_type, _args) do
     children = [
-      EllionCoreWeb.Telemetry,
+      EllionWeb.Telemetry,
       EllionCore.Repo,
       {DNSCluster, query: Application.get_env(:ellion, :dns_cluster_query) || :ignore},
       {Phoenix.PubSub, name: EllionCore.PubSub},
@@ -17,7 +17,7 @@ defmodule EllionCore.Application do
       # Start a worker by calling: EllionCore.Worker.start_link(arg)
       # {EllionCore.Worker, arg},
       # Start to serve requests, typically the last entry
-      EllionCoreWeb.Endpoint
+      EllionWeb.Endpoint
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
@@ -30,7 +30,7 @@ defmodule EllionCore.Application do
   # whenever the application is updated.
   @impl true
   def config_change(changed, _new, removed) do
-    EllionCoreWeb.Endpoint.config_change(changed, removed)
+    EllionWeb.Endpoint.config_change(changed, removed)
     :ok
   end
 end
