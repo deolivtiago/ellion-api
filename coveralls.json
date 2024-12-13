@@ -1,0 +1,21 @@
+{
+  "skip_files": [
+    "test",
+    "lib/ellion_web.ex",
+    "lib/ellion_core.ex",
+    "lib/ellion_core/application.ex",
+    "lib/ellion_core/mailer.ex",
+    "lib/ellion_core/repo.ex",
+    "lib/ellion_web/gettext.ex",
+    "lib/ellion_web/router.ex",
+    "lib/ellion_web/telemetry.ex",
+    "lib/ellion_web/views/error_json.ex"
+  ],
+  "terminal_options": {
+    "file_column_width": 80
+  },
+  "coverage_options": {
+    "treat_no_relevant_lines_as_covered": true,
+    "minimum_coverage": 75
+  }
+}
