@@ -53,7 +53,13 @@ defmodule EllionCore.MixProject do
       {:dns_cluster, "~> 0.1.1"},
       {:bandit, "~> 1.5"},
       {:credo, "~> 1.7", only: [:dev, :test], runtime: false},
-      {:excoveralls, "~> 0.18", only: [:dev, :test], runtime: false}
+      {:excoveralls, "~> 0.18", only: [:dev, :test], runtime: false},
+      {:tz, "~> 0.28"},
+      {:goal, "~> 1.1"},
+      {:argon2_elixir, "~> 4.1"},
+      {:nimble_totp, "~> 1.0"},
+      {:jose, "~> 1.11"},
+      {:faker, "~> 0.18", only: [:dev, :test], runtime: false}
     ]
   end
 

@@ -32,6 +32,14 @@ config :ellion, EllionWeb.Endpoint,
 # at the `config/runtime.exs`.
 config :ellion, EllionCore.Mailer, adapter: Swoosh.Adapters.Local
 
+# Configures the database timezone
+config :elixir, :time_zone_database, Tz.TimeZoneDatabase
+# Configures Goal's options
+config :goal,
+  password_regex: ~r/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[.!?@#$%^&*_+\-])/,
+  url_regex:
+    ~r/(https:\/\/www\.|http:\/\/www\.|https:\/\/|http:\/\/)?[a-zA-Z]{2,}(\.[a-zA-Z]{2,})(\.[a-zA-Z]{2,})?\/[a-zA-Z0-9]{2,}|((https:\/\/www\.|http:\/\/www\.|https:\/\/|http:\/\/)?[a-zA-Z]{2,}(\.[a-zA-Z]{2,})(\.[a-zA-Z]{2,})?)|(https:\/\/www\.|http:\/\/www\.|https:\/\/|http:\/\/)?[a-zA-Z0-9]{2,}\.[a-zA-Z0-9]{2,}\.[a-zA-Z0-9]{2,}(\.[a-zA-Z0-9]{2,})?/
+
 # Configures Elixir's Logger
 config :logger, :console,
   format: "$time $metadata[$level] $message\n",
