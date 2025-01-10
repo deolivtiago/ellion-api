@@ -8,6 +8,7 @@ defmodule EllionWeb.AuthController.Refresh do
     required(:refresh_token, :string, trim: true)
   end
 
+  @doc false
   def handle(params) do
     params
     |> validate_params()

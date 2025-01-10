@@ -8,6 +8,7 @@ defmodule EllionWeb.AuthController.Verify do
     required(:email, :string, format: :email, min: 3, max: 160, trim: true)
   end
 
+  @doc false
   def handle(params) do
     params
     |> validate_params()

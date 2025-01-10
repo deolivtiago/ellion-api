@@ -13,10 +13,10 @@ defmodule EllionWeb.AuthController do
 
   @doc false
   def signup(conn, params) do
-    with {:ok, auth} <- SignUp.handle(params) do
+    with {:ok, user} <- SignUp.handle(params) do
       conn
       |> put_status(:created)
-      |> render(:show, auth: auth)
+      |> render(:show, user: user)
     end
   end
 
