@@ -11,6 +11,19 @@ defmodule EllionWeb.Router do
 
   scope "/api", EllionWeb do
     pipe_through :api
+
+    post "/auth/signup", AuthController, :signup
+    post "/auth/signin", AuthController, :signin
+    get "/auth/verify", AuthController, :verify
+    post "/auth/confirm", AuthController, :confirm
+    post "/auth/refresh", AuthController, :refresh
+    delete "/auth/signout", AuthController, :signout
+  end
+
+  scope "/api", EllionWeb do
+    pipe_through [:api, :auth]
+
+    get "/auth/me", AuthController, :me
   end
 
   # Enable Swoosh mailbox preview in development
