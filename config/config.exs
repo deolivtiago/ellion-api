@@ -32,6 +32,13 @@ config :ellion, EllionWeb.Endpoint,
 # at the `config/runtime.exs`.
 config :ellion, EllionCore.Mailer, adapter: Swoosh.Adapters.Local
 
+config :ellion, EllionCore.JsonWebToken,
+  jwt_secret_key:
+    System.get_env(
+      "JWT_SECRET_KEY",
+      "H59i+xtsTruOIcRMvyDxtS3CcZE5Icf0q82RE1UNSQd0uUfETRrUNfK6zHaf0Ezw"
+    )
+
 # Configures the database timezone
 config :elixir, :time_zone_database, Tz.TimeZoneDatabase
 # Configures Goal's options
