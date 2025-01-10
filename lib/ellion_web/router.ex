@@ -5,6 +5,10 @@ defmodule EllionWeb.Router do
     plug :accepts, ["json"]
   end
 
+  pipeline :auth do
+    plug EllionWeb.AuthenticationPlug
+  end
+
   scope "/api", EllionWeb do
     pipe_through :api
   end
