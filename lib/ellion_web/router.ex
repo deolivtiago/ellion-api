@@ -12,6 +12,8 @@ defmodule EllionWeb.Router do
   scope "/api", EllionWeb do
     pipe_through :api
 
+    resources "/users", UserController, except: [:new, :edit]
+
     post "/auth/signup", AuthController, :signup
     post "/auth/signin", AuthController, :signin
     get "/auth/verify", AuthController, :verify
